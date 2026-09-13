@@ -1,0 +1,608 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AD International Consulting — Aurélie Dupassieux</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;1,400&family=Montserrat:wght@300;400;500;600&display=swap');
+
+:root {
+  --beige:       #EDE6D6;
+  --beige-deep:  #D9CBAA;
+  --beige-line:  #C9B98F;
+  --black:       #17140F;
+  --ink:         #221F19;
+  --ink-soft:    #57503F;
+  --white:       #FFFFFF;
+}
+
+*, *::before, *::after { margin:0; padding:0; box-sizing:border-box; }
+html { scroll-behavior: smooth; }
+
+body {
+  background: var(--beige);
+  color: var(--ink);
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 300;
+  font-size: 16px;
+  line-height: 1.7;
+}
+
+h1, h2, h3, .serif {
+  font-family: 'Playfair Display', serif;
+  font-weight: 500;
+  color: var(--black);
+}
+
+a { color: inherit; }
+
+.wrap {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 0 48px;
+}
+
+/* ─── NAV ─── */
+header {
+  position: fixed; top:0; left:0; right:0; z-index: 100;
+  background: rgba(237,230,214,0.92);
+  backdrop-filter: blur(10px);
+  border-bottom: 1px solid var(--beige-line);
+}
+
+header .wrap {
+  display:flex; justify-content:space-between; align-items:center;
+  height: 84px;
+}
+
+.brand {
+  font-family:'Playfair Display', serif;
+  font-size: 19px;
+  letter-spacing: 0.02em;
+  color: var(--black);
+  text-decoration:none;
+}
+
+.brand span { color: var(--ink-soft); font-style: italic; font-weight: 400; }
+
+nav ul {
+  display:flex; gap: 40px; list-style:none;
+}
+
+nav a {
+  font-size: 13px;
+  text-decoration:none;
+  color: var(--ink);
+  letter-spacing: 0.03em;
+  padding-bottom: 4px;
+  border-bottom: 1px solid transparent;
+  transition: border-color 0.2s, color 0.2s;
+}
+
+nav a:hover { border-color: var(--black); }
+
+/* ─── HERO ─── */
+.hero {
+  padding: 200px 0 140px;
+  position: relative;
+}
+
+.hero .wrap {
+  display:grid;
+  grid-template-columns: 1.4fr 1fr;
+  gap: 60px;
+  align-items:end;
+}
+
+.hero-kicker {
+  font-size: 13px;
+  color: var(--ink-soft);
+  letter-spacing: 0.04em;
+  margin-bottom: 22px;
+}
+
+.hero h1 {
+  font-size: clamp(40px, 5vw, 64px);
+  line-height: 1.08;
+  margin-bottom: 26px;
+  max-width: 560px;
+}
+
+.hero h1 em { font-style: italic; color: var(--ink-soft); font-weight: 400; }
+
+.hero-desc {
+  font-size: 16px;
+  color: var(--ink-soft);
+  max-width: 460px;
+  margin-bottom: 36px;
+}
+
+.btn {
+  display:inline-block;
+  padding: 15px 34px;
+  background: var(--black);
+  color: var(--beige);
+  text-decoration:none;
+  font-size: 13px;
+  letter-spacing: 0.04em;
+  transition: background 0.2s;
+}
+
+.btn:hover { background: #322c22; }
+
+.btn-outline {
+  display:inline-block;
+  padding: 14px 32px;
+  border: 1px solid var(--black);
+  color: var(--black);
+  text-decoration:none;
+  font-size: 13px;
+  letter-spacing: 0.04em;
+  margin-left: 14px;
+}
+
+.hero-figures {
+  border-left: 1px solid var(--beige-line);
+  padding-left: 36px;
+  display:flex; flex-direction:column; gap: 28px;
+}
+
+.figure-num {
+  font-family:'Playfair Display', serif;
+  font-size: 34px;
+  color: var(--black);
+}
+
+.figure-label {
+  font-size: 12px;
+  color: var(--ink-soft);
+  letter-spacing: 0.03em;
+  margin-top: 2px;
+}
+
+/* ─── SECTION COMMON ─── */
+section { padding: 110px 0; }
+section.alt { background: var(--white); }
+
+.section-head {
+  display:grid;
+  grid-template-columns: 1fr 1.6fr;
+  gap: 60px;
+  margin-bottom: 64px;
+  align-items:baseline;
+}
+
+.section-head .tag {
+  font-size: 13px;
+  color: var(--ink-soft);
+  letter-spacing: 0.03em;
+}
+
+.section-head h2 {
+  font-size: clamp(28px, 3vw, 38px);
+  line-height: 1.2;
+}
+
+/* ─── EXPERTISE ─── */
+.expertise-list {
+  display:grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1px;
+  background: var(--beige-line);
+  border: 1px solid var(--beige-line);
+}
+
+.expertise-item {
+  background: var(--beige);
+  padding: 40px;
+}
+
+section.alt .expertise-item { background: var(--white); }
+
+.expertise-item h3 {
+  font-size: 21px;
+  margin-bottom: 12px;
+  font-weight: 500;
+}
+
+.expertise-item p {
+  font-size: 14.5px;
+  color: var(--ink-soft);
+}
+
+/* ─── APPROACH ─── */
+.approach-row {
+  display:grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 48px;
+}
+
+.approach-item {
+  border-top: 1px solid var(--black);
+  padding-top: 20px;
+}
+
+.approach-item h3 {
+  font-size: 18px;
+  margin-bottom: 10px;
+  font-weight: 500;
+}
+
+.approach-item p {
+  font-size: 14px;
+  color: var(--ink-soft);
+}
+
+.rate-note {
+  margin-top: 56px;
+  font-size: 14px;
+  color: var(--ink-soft);
+  border-left: 2px solid var(--black);
+  padding-left: 20px;
+}
+
+.rate-note strong { color: var(--black); font-weight: 500; }
+
+/* ─── SECTORS ─── */
+.sector-strip {
+  display:flex;
+  flex-wrap:wrap;
+  gap: 14px;
+}
+
+.sector-chip {
+  border: 1px solid var(--black);
+  padding: 10px 22px;
+  font-size: 13px;
+  letter-spacing: 0.02em;
+}
+
+/* ─── WORK ─── */
+.work-list { display:flex; flex-direction:column; }
+
+.work-row {
+  display:grid;
+  grid-template-columns: 100px 1fr 180px;
+  gap: 30px;
+  align-items:baseline;
+  padding: 26px 0;
+  border-top: 1px solid var(--beige-line);
+  text-decoration:none;
+  color: inherit;
+}
+
+.work-row:last-child { border-bottom: 1px solid var(--beige-line); }
+
+.work-year { font-size: 13px; color: var(--ink-soft); }
+
+.work-title {
+  font-family:'Playfair Display', serif;
+  font-size: 20px;
+  color: var(--black);
+}
+
+.work-desc {
+  font-size: 13.5px;
+  color: var(--ink-soft);
+  grid-column: 2 / 3;
+  margin-top: 4px;
+}
+
+.work-link {
+  font-size: 13px;
+  text-align:right;
+  align-self:center;
+  color: var(--ink-soft);
+  transition: color 0.2s;
+}
+
+.work-row:hover .work-link { color: var(--black); }
+
+/* ─── CONTACT ─── */
+.contact-grid {
+  display:grid;
+  grid-template-columns: 1fr 1.3fr;
+  gap: 70px;
+}
+
+.contact-block { margin-bottom: 30px; }
+
+.contact-label {
+  font-size: 12px;
+  color: var(--ink-soft);
+  letter-spacing: 0.03em;
+  margin-bottom: 6px;
+}
+
+.contact-value {
+  font-family:'Playfair Display', serif;
+  font-size: 19px;
+  color: var(--black);
+}
+
+form { display:flex; flex-direction:column; gap: 22px; }
+
+.form-row { display:grid; grid-template-columns: 1fr 1fr; gap: 22px; }
+
+.field label {
+  display:block;
+  font-size: 12px;
+  color: var(--ink-soft);
+  margin-bottom: 8px;
+  letter-spacing: 0.02em;
+}
+
+.field input, .field textarea {
+  width:100%;
+  background: transparent;
+  border: none;
+  border-bottom: 1px solid var(--beige-line);
+  padding: 8px 0;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 15px;
+  color: var(--ink);
+  outline:none;
+  transition: border-color 0.2s;
+}
+
+.field input:focus, .field textarea:focus { border-color: var(--black); }
+
+.field textarea { resize: vertical; min-height: 90px; }
+
+.form-submit {
+  align-self:flex-start;
+  margin-top: 10px;
+  padding: 15px 36px;
+  background: var(--black);
+  color: var(--beige);
+  border:none;
+  font-family:'Montserrat', sans-serif;
+  font-size: 13px;
+  letter-spacing: 0.04em;
+  cursor:pointer;
+  transition: background 0.2s;
+}
+
+.form-submit:hover { background: #322c22; }
+
+.form-note {
+  font-size: 12.5px;
+  color: var(--ink-soft);
+  margin-top: 6px;
+}
+
+/* ─── FOOTER ─── */
+footer {
+  border-top: 1px solid var(--beige-line);
+  padding: 40px 0;
+}
+
+footer .wrap {
+  display:flex; justify-content:space-between; align-items:center;
+  font-size: 12.5px;
+  color: var(--ink-soft);
+}
+
+/* ─── RESPONSIVE ─── */
+@media (max-width: 860px) {
+  .wrap { padding: 0 26px; }
+  .hero .wrap { grid-template-columns: 1fr; }
+  .hero-figures { border-left:none; border-top:1px solid var(--beige-line); padding-left:0; padding-top:24px; flex-direction:row; flex-wrap:wrap; gap:36px; }
+  .section-head { grid-template-columns: 1fr; gap: 20px; }
+  .expertise-list { grid-template-columns: 1fr; }
+  .approach-row { grid-template-columns: 1fr; gap: 32px; }
+  .contact-grid { grid-template-columns: 1fr; gap: 40px; }
+  .form-row { grid-template-columns: 1fr; }
+  .work-row { grid-template-columns: 1fr; }
+  .work-desc { grid-column: 1; }
+  nav ul { display:none; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  * { transition: none !important; }
+}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="wrap">
+    <a href="#top" class="brand">AD International <span>Consulting</span></a>
+    <nav>
+      <ul>
+        <li><a href="#expertise">Expertise</a></li>
+        <li><a href="#approach">Approach</a></li>
+        <li><a href="#work">Work</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<section class="hero" id="top">
+  <div class="wrap">
+    <div>
+      <div class="hero-kicker">Aurélie Dupassieux — Independent Strategic Advisor</div>
+      <h1>Structuring transactions <em>where markets intersect.</em></h1>
+      <p class="hero-desc">Fifteen years in international finance, commodities, and cross-border transactions. An analytical eye, trained in hard science as much as international management, applied to decisions that matter.</p>
+      <div>
+        <a href="#contact" class="btn">Discuss an engagement</a>
+        <a href="#work" class="btn-outline">View selected work</a>
+      </div>
+    </div>
+    <div class="hero-figures">
+      <div>
+        <div class="figure-num">15+</div>
+        <div class="figure-label">years in international finance &amp; commodities</div>
+      </div>
+      <div>
+        <div class="figure-num">6</div>
+        <div class="figure-label">working languages</div>
+      </div>
+      <div>
+        <div class="figure-num">2</div>
+        <div class="figure-label">degrees — management &amp; chemistry</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="alt" id="expertise">
+  <div class="wrap">
+    <div class="section-head">
+      <div class="tag">Areas of practice</div>
+      <h2>A practice built at the intersection of finance, commodities, and cross-border business law.</h2>
+    </div>
+    <div class="expertise-list">
+      <div class="expertise-item">
+        <h3>FX &amp; commodity markets</h3>
+        <p>Market analysis, position structuring, and monitoring of crude oil, energy, and currency dynamics.</p>
+      </div>
+      <div class="expertise-item">
+        <h3>Cross-border transactions</h3>
+        <p>Support for international negotiations, coordination between counterparties, and contractual framing.</p>
+      </div>
+      <div class="expertise-item">
+        <h3>Data &amp; market intelligence</h3>
+        <p>Modeling, dashboards, and quantitative analysis in support of decision-making.</p>
+      </div>
+      <div class="expertise-item">
+        <h3>Premium real estate advisory</h3>
+        <p>Valuation and positioning of prestige residential assets, connected to international networks.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="approach">
+  <div class="wrap">
+    <div class="section-head">
+      <div class="tag">Approach</div>
+      <h2>Built on long-term relationships, not one-off transactions.</h2>
+    </div>
+    <div class="approach-row">
+      <div class="approach-item">
+        <h3>Scoping</h3>
+        <p>An initial conversation to clarify the issue, the counterparties involved, and the expected outcome.</p>
+      </div>
+      <div class="approach-item">
+        <h3>Engagement</h3>
+        <p>Analysis, structuring, or direct support, working independently or alongside your teams for the full life of the mandate.</p>
+      </div>
+      <div class="approach-item">
+        <h3>Continuity</h3>
+        <p>A relationship that carries forward — from the first transaction to the next, and the one after that.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="alt">
+  <div class="wrap">
+    <div class="section-head">
+      <div class="tag">Sectors</div>
+      <h2>Positioned for demanding counterparts.</h2>
+    </div>
+    <div class="sector-strip">
+      <div class="sector-chip">Trading houses</div>
+      <div class="sector-chip">Cross-border fintechs</div>
+      <div class="sector-chip">Family offices</div>
+      <div class="sector-chip">Specialist recruiters</div>
+    </div>
+  </div>
+</section>
+
+<section id="work">
+  <div class="wrap">
+    <div class="section-head">
+      <div class="tag">Selected work</div>
+      <h2>A glimpse of the analytical and technical work carried out alongside advisory engagements.</h2>
+    </div>
+    <div class="work-list">
+      <a class="work-row" href="https://github.com/adupassieux-arch" target="_blank" rel="noopener">
+        <div class="work-year">2026</div>
+        <div class="work-title">Bottleneck — Interactive dashboard
+          <div class="work-desc">Stock and sales analysis, anomaly detection, and product segmentation for a premium e-commerce catalog.</div>
+        </div>
+        <div class="work-link">View on GitHub →</div>
+      </a>
+      <a class="work-row" href="https://github.com/adupassieux-arch" target="_blank" rel="noopener">
+        <div class="work-year">2026</div>
+        <div class="work-title">Case study — MDP structuring
+          <div class="work-desc">Applying a Markov Decision Process framework to commodity trade structuring.</div>
+        </div>
+        <div class="work-link">View on GitHub →</div>
+      </a>
+      <a class="work-row" href="https://github.com/adupassieux-arch" target="_blank" rel="noopener">
+        <div class="work-year">2026</div>
+        <div class="work-title">Price prediction &amp; classification — Paris real estate</div>
+        <div class="work-desc" style="margin-top:4px;">Price modeling across 26,000 transactions and automated classification of acquisition opportunities.</div>
+        <div class="work-link">View on GitHub →</div>
+      </a>
+    </div>
+  </div>
+</section>
+
+<section class="alt" id="contact">
+  <div class="wrap">
+    <div class="section-head">
+      <div class="tag">Contact</div>
+      <h2>An issue to scope, an engagement to discuss.</h2>
+    </div>
+    <div class="contact-grid">
+      <div>
+        <div class="contact-block">
+          <div class="contact-label">Entity</div>
+          <div class="contact-value">AD International Consulting</div>
+        </div>
+        <div class="contact-block">
+          <div class="contact-label">Based in</div>
+          <div class="contact-value">Paris, France</div>
+        </div>
+        <div class="contact-block">
+          <div class="contact-label">Languages</div>
+          <div class="contact-value">FR · EN · PT · ES · DE · RU</div>
+        </div>
+      </div>
+      <form action="https://formspree.io/f/VOTRE_ID_FORMSPREE" method="POST">
+        <div class="form-row">
+          <div class="field">
+            <label>Name</label>
+            <input type="text" name="name" required>
+          </div>
+          <div class="field">
+            <label>Company</label>
+            <input type="text" name="company">
+          </div>
+        </div>
+        <div class="form-row">
+          <div class="field">
+            <label>Email</label>
+            <input type="email" name="email" required>
+          </div>
+          <div class="field">
+            <label>Phone</label>
+            <input type="tel" name="phone">
+          </div>
+        </div>
+        <div class="field">
+          <label>Your message</label>
+          <textarea name="message" required></textarea>
+        </div>
+        <button class="form-submit" type="submit">Send message</button>
+        <div class="form-note">Response within 48 business hours.</div>
+      </form>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div>AD International Consulting — Aurélie Dupassieux</div>
+    <div>© 2026. All rights reserved.</div>
+  </div>
+</footer>
+
+</body>
+</html>
