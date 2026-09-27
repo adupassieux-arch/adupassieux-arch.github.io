@@ -299,6 +299,64 @@ section.alt .expertise-item { background: var(--white); }
 
 .work-row:hover .work-link { color: var(--black); }
 
+/* ─── ABOUT ─── */
+#about { border-top: 1px solid var(--beige-line); }
+
+.about-grid {
+  display:grid;
+  grid-template-columns: 0.8fr 1.2fr;
+  gap: 70px;
+  align-items:start;
+}
+
+.about-photo img {
+  width:100%;
+  height:auto;
+  display:block;
+  border: 1px solid var(--beige-line);
+}
+
+.about-caption {
+  font-size: 12px;
+  color: var(--ink-soft);
+  letter-spacing: 0.03em;
+  margin-top: 12px;
+}
+
+.about-text p {
+  font-size: 15.5px;
+  color: var(--ink-soft);
+  margin-bottom: 20px;
+}
+
+.about-text p:first-child {
+  font-family:'Playfair Display', serif;
+  font-size: 21px;
+  line-height: 1.5;
+  color: var(--black);
+}
+
+.about-facts {
+  list-style:none;
+  margin-top: 36px;
+  border-top: 1px solid var(--beige-line);
+}
+
+.about-facts li {
+  display:grid;
+  grid-template-columns: 150px 1fr;
+  gap: 20px;
+  padding: 14px 0;
+  border-bottom: 1px solid var(--beige-line);
+  font-size: 14px;
+}
+
+.about-facts span {
+  font-size: 12px;
+  color: var(--ink-soft);
+  letter-spacing: 0.03em;
+}
+
 /* ─── CONTACT ─── */
 .contact-grid {
   display:grid;
@@ -393,6 +451,9 @@ footer .wrap {
   .expertise-list { grid-template-columns: 1fr; }
   .approach-row { grid-template-columns: 1fr; gap: 32px; }
   .contact-grid { grid-template-columns: 1fr; gap: 40px; }
+  .about-grid { grid-template-columns: 1fr; gap: 40px; }
+  .about-photo { max-width: 380px; }
+  .about-facts li { grid-template-columns: 1fr; gap: 2px; }
   .form-row { grid-template-columns: 1fr; }
   .work-row { grid-template-columns: 1fr; }
   .work-desc { grid-column: 1; }
@@ -411,6 +472,7 @@ footer .wrap {
     <a href="#top" class="brand">AD International <span>Consulting</span></a>
     <nav>
       <ul>
+        <li><a href="#about">About</a></li>
         <li><a href="#expertise">Expertise</a></li>
         <li><a href="#approach">Approach</a></li>
         <li><a href="#work">Work</a></li>
@@ -446,6 +508,32 @@ footer .wrap {
       <div>
         <div class="figure-num">2</div>
         <div class="figure-label">degrees — management &amp; chemistry</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="about">
+  <div class="wrap">
+    <div class="section-head">
+      <div class="tag">About</div>
+      <h2>A career in international finance, read through an analyst's lens.</h2>
+    </div>
+    <div class="about-grid">
+      <figure class="about-photo">
+        <img src="images/aurelie-dupassieux.jpg" alt="Portrait of Aurélie Dupassieux" width="800" height="1000" loading="lazy">
+        <figcaption class="about-caption">Aurélie Dupassieux — Founder, AD International Consulting</figcaption>
+      </figure>
+      <div class="about-text">
+        <p>I am an independent strategic advisor based in Paris, working where finance, commodities and cross-border business meet.</p>
+        <p>For more than fifteen years I have worked across international finance, FX and commodity markets, and cross-border transactions — analysing markets, structuring positions and coordinating counterparties across jurisdictions. I founded and led MyCityLofts (Paris, Brussels, London) from 2012 to 2023, and served as Director of Commodities &amp; Private Banking Advisory at AD Invest Ltd in London from 2017 to 2024. Alongside this, I have advised on the valuation and positioning of prestige residential assets.</p>
+        <p>My training covers both sides of the analysis: a BSc in Chemistry and a Master's in International Management. Data is a natural extension of that background, not a change of course — today I build models, dashboards and quantitative analyses in Python, SQL and Power BI to support the decisions my clients make.</p>
+        <ul class="about-facts">
+          <li><span>Education</span>Master's in International Management, IAE Grenoble · BSc in Chemistry, Institut Polytechnique de Grenoble</li>
+          <li><span>Recognition</span>Trends Gazelles Award 2016 (MyCityLofts) · FNEGE Best Master Thesis</li>
+          <li><span>Certification</span>Civil Aviation Security, ENAC</li>
+          <li><span>Languages</span>French · English · Portuguese · Spanish · German · Russian</li>
+        </ul>
       </div>
     </div>
   </div>
