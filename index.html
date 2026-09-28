@@ -311,9 +311,16 @@ section.alt .expertise-item { background: var(--white); }
 
 .about-photo img {
   width:100%;
+  max-width:380px;
+  aspect-ratio:1/1;
+  object-fit:cover;
   height:auto;
   display:block;
+  border-radius:50%;
   border: 1px solid var(--beige-line);
+  outline: 1px solid var(--beige-line);
+  outline-offset: 10px;
+  margin: 11px;
 }
 
 .about-caption {
@@ -452,7 +459,7 @@ footer .wrap {
   .approach-row { grid-template-columns: 1fr; gap: 32px; }
   .contact-grid { grid-template-columns: 1fr; gap: 40px; }
   .about-grid { grid-template-columns: 1fr; gap: 40px; }
-  .about-photo { max-width: 380px; }
+  .about-photo { max-width: 300px; }
   .about-facts li { grid-template-columns: 1fr; gap: 2px; }
   .form-row { grid-template-columns: 1fr; }
   .work-row { grid-template-columns: 1fr; }
@@ -521,7 +528,7 @@ footer .wrap {
     </div>
     <div class="about-grid">
       <figure class="about-photo">
-        <img src="images/aurelie-dupassieux.jpg" alt="Portrait of Aurélie Dupassieux" width="800" height="1000" loading="lazy">
+        <img src="images/aurelie-dupassieux-portrait.jpg" alt="Portrait of Aurélie Dupassieux" width="900" height="900" loading="lazy">
         <figcaption class="about-caption">Aurélie Dupassieux — Founder, AD International Consulting</figcaption>
       </figure>
       <div class="about-text">
