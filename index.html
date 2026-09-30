@@ -531,9 +531,9 @@ section.alt .expertise-item { background: var(--white); }
 }
 
 .contact-block { margin-bottom: 30px; }
-.contact-links a { color: var(--black); text-decoration: none; border-bottom: 1px solid var(--beige-line); transition: border-color .2s; }
-.contact-links a:hover { border-color: var(--black); }
-.contact-links span { color: var(--beige-line); margin: 0 4px; }
+.contact-links { display:flex; gap:18px; align-items:center; }
+.contact-links a { color: var(--black); display:inline-flex; transition: color .2s, transform .2s; }
+.contact-links a:hover { color: var(--ink-soft); transform: translateY(-1px); }
 
 .contact-label {
   font-size: 12px;
@@ -960,7 +960,7 @@ footer .wrap {
         </div>
         <div class="contact-block">
           <div class="contact-label">Profiles</div>
-          <div class="contact-value contact-links"><a href="https://www.instagram.com/aureliedupassieux" target="_blank" rel="noopener me">Instagram</a> <span>·</span> <a href="https://x.com/mclbank" target="_blank" rel="noopener me">X</a> <span>·</span> <a href="https://www.facebook.com/share/19ZGYpaPBp/?mibextid=wwXIfr" target="_blank" rel="noopener me">Facebook</a> <span>·</span> <a href="https://en.malt.fr/profile/aureliedupassieux" target="_blank" rel="noopener me">Malt</a></div>
+          <div class="contact-value contact-links"><a href="https://www.instagram.com/aureliedupassieux" target="_blank" rel="noopener me" aria-label="Instagram" title="Instagram"><svg viewBox="0 0 24 24" width="22" height="22" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5" fill="none" stroke="currentColor" stroke-width="1.6"/><circle cx="12" cy="12" r="4.2" fill="none" stroke="currentColor" stroke-width="1.6"/><circle cx="17.3" cy="6.7" r="1.1" fill="currentColor"/></svg></a><a href="https://x.com/mclbank" target="_blank" rel="noopener me" aria-label="X" title="X"><svg viewBox="0 0 24 24" width="22" height="22" aria-hidden="true"><path fill="currentColor" d="M17.8 3h3.1l-6.8 7.8L22 21h-6.2l-4.9-6.4L5.3 21H2.2l7.3-8.3L2 3h6.4l4.4 5.8L17.8 3zm-1.1 16.2h1.7L7.4 4.7H5.6l11.1 14.5z"/></svg></a><a href="https://www.facebook.com/share/19ZGYpaPBp/?mibextid=wwXIfr" target="_blank" rel="noopener me" aria-label="Facebook" title="Facebook"><svg viewBox="0 0 24 24" width="22" height="22" aria-hidden="true"><path fill="currentColor" d="M13.5 21v-7.5h2.6l.4-3h-3V8.6c0-.9.3-1.5 1.5-1.5h1.6V4.4c-.3 0-1.2-.1-2.3-.1-2.3 0-3.8 1.4-3.8 3.9v2.3H8v3h2.5V21h3z"/></svg></a><a href="https://en.malt.fr/profile/aureliedupassieux" target="_blank" rel="noopener me" aria-label="Malt" title="Malt"><svg viewBox="0 0 24 24" width="22" height="22" aria-hidden="true"><circle cx="12" cy="12" r="9.2" fill="none" stroke="currentColor" stroke-width="1.6"/><path d="M7.6 16V8.2l4.4 5 4.4-5V16" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round" stroke-linecap="round"/></svg></a></div>
         </div>
       </div>
       <form action="https://formspree.io/f/xljeylon" method="POST">
