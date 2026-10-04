@@ -426,6 +426,11 @@ section.alt .expertise-item { background: var(--white); }
 
 /* ─── WORK ─── */
 .work-list { display:flex; flex-direction:column; }
+.lab-head { margin: 72px 0 8px; display:grid; grid-template-columns: 1fr 1.6fr; gap: 40px; align-items: baseline; }
+.lab-head h3 { font-family:'Playfair Display', serif; font-weight:400; font-size: 26px; color: var(--black); }
+.lab-head p { font-size: 14px; color: var(--ink-soft); line-height: 1.7; }
+.lab-list .work-title { font-size: 0.94em; }
+@media (max-width:860px){ .lab-head { grid-template-columns: 1fr; gap: 10px; } }
 
 .work-row {
   display:grid;
@@ -664,7 +669,7 @@ footer .wrap {
 .foot-brand img{height:110px;width:auto}
 @media (max-width:860px){footer .wrap{flex-direction:column;gap:14px;text-align:center}}
 
-.hdr-right{display:flex;align-items:center;gap:10px}.hdr-right .back{margin-left:12px}.lang{font-size:12px;letter-spacing:.04em;text-decoration:none;color:var(--black);border:1px solid var(--black);padding:5px 10px;line-height:1.2;white-space:nowrap;transition:border-color .2s}.lang:hover{border-color:#B08D57}@media (max-width:640px){.hdr-right .back{display:none}.hdr-right{gap:5px}.lang{padding:2px 5px;font-size:11px}header .wrap:has(.lang:nth-of-type(4)) .brand-mark{display:none}header .wrap:has(.lang:nth-of-type(4)) .brand{font-size:15px}}.nav-langs{display:flex;align-items:center;gap:6px;white-space:nowrap}nav li{white-space:nowrap}.nav-langs a{font-size:12px;letter-spacing:.06em;border:1px solid var(--black);padding:5px 9px;line-height:1.2;transition:border-color .2s}.nav-langs a:hover{border-color:#B08D57}nav ul{gap:22px}@media (max-width:1440px){.menu-toggle{display:block;margin-left:auto}nav ul{display:none}nav.open ul{display:flex;flex-direction:column;gap:18px;position:absolute;top:84px;left:0;right:0;background:var(--beige);padding:24px 26px;border-bottom:1px solid var(--beige-line)}nav.open .nav-langs{align-self:flex-start}}
+.hdr-right{display:flex;align-items:center;gap:10px}.hdr-right .back{margin-left:12px}.lang{font-size:12px;letter-spacing:.04em;text-decoration:none;color:var(--black);border:1px solid var(--black);padding:5px 10px;line-height:1.2;white-space:nowrap;transition:border-color .2s}.lang:hover{border-color:#B08D57}@media (max-width:640px){.hdr-right .back{display:none}.hdr-right{gap:5px}.lang{padding:2px 5px;font-size:11px}header .wrap:has(.lang:nth-of-type(4)) .brand-mark{display:none}header .wrap:has(.lang:nth-of-type(4)) .brand{font-size:15px}}.nav-langs{display:flex;align-items:center;gap:5px;white-space:nowrap}nav li{white-space:nowrap}.nav-langs a{font-size:12px;letter-spacing:.06em;border:1px solid var(--black);padding:5px 8px;line-height:1.2;transition:border-color .2s}.nav-langs a:hover{border-color:#B08D57}nav ul{gap:18px}.brand{margin-right:20px}@media (max-width:1280px){.menu-toggle{display:block;margin-left:auto}nav ul{display:none}nav.open ul{display:flex;flex-direction:column;gap:18px;position:absolute;top:84px;left:0;right:0;background:var(--beige);padding:24px 26px;border-bottom:1px solid var(--beige-line)}nav.open .nav-langs{align-self:flex-start}}
 /* ── motion ── */
 .rv{opacity:0;transform:translateY(22px);transition:opacity .9s ease,transform .9s cubic-bezier(.2,.7,.2,1)}
 .rv.in{opacity:1;transform:none}
@@ -713,7 +718,6 @@ html[dir=rtl] a.work-row:hover .work-title{transform:translateX(-8px)}
 <li><a href="#work">Trabalhos</a></li>
 <li><a href="#publications">Publicações</a></li>
 <li><a href="#briefings">Relatórios</a></li>
-<li><a href="#design">Design</a></li>
 <li><a href="#contact">Contato</a></li>
         <li class="nav-langs"><a href="../" lang="en">EN</a><a href="../zh/" lang="zh-Hans">中文</a><a href="../es/" lang="es">ES</a><a href="../ar/" lang="ar">عربي</a></li>
 </ul>
@@ -839,7 +843,7 @@ html[dir=rtl] a.work-row:hover .work-title{transform:translateX(-8px)}
 <div class="wrap">
 <div class="section-head">
 <div class="tag">Trabalhos selecionados</div>
-<h2>Uma amostra do trabalho analítico e técnico realizado paralelamente às atividades de consultoria.</h2>
+<h2>Mandatos de assessoria e o trabalho analítico que os sustenta.</h2>
 </div>
 <div class="work-list">
 <a class="work-row" href="https://damirinternational.github.io/#supply" rel="noopener nofollow" target="_blank">
@@ -847,6 +851,12 @@ html[dir=rtl] a.work-row:hover .work-title{transform:translateX(-8px)}
 <div class="work-title">Assessoria em trading de commodities — Petróleo bruto e GNL</div>
 <div class="work-link">Ver projeto →</div>
 </a>
+</div>
+<div class="lab-head">
+<h3>Laboratório analítico</h3>
+<p>Modelos quantitativos e painéis desenvolvidos em Python, SQL e Power BI: as ferramentas de dados que sustentam a assessoria.</p>
+</div>
+<div class="work-list lab-list">
 <a class="work-row" href="https://github.com/adupassieux-arch" rel="noopener" target="_blank">
 <div class="work-year">2026</div>
 <div class="work-title">Estudo de caso — Estruturação por MDP
@@ -1053,7 +1063,7 @@ html[dir=rtl] a.work-row:hover .work-title{transform:translateX(-8px)}
 <footer>
 <div class="wrap">
 <div class="foot-brand"><img alt="Logotipo da AD International Consulting" height="80" loading="lazy" src="../images/logo-adic.png" width="130"/><span>Aurélie Dupassieux</span></div>
-<div>© 2026. Todos os direitos reservados. · <a class="foot-legal" href="../legal/">Aviso legal</a></div>
+<div>© 2026. Todos os direitos reservados. · <a class="foot-legal" href="#design">Portfólio de design</a> · <a class="foot-legal" href="../legal/">Aviso legal</a></div>
 </div>
 </footer>
 <script>
