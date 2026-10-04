@@ -305,7 +305,7 @@ function splitH(h){var cjk=/[㐀-鿿]/.test(h.textContent);var k=0;
    c.parentNode.replaceChild(f,c);}else if(c.nodeType===1){walk(c);}});})(h);
  h.classList.add('split');return k;}
 var GROUPS='.figs,.work-list,.parts,.take,.sector-strip,.expertise-list,.approach-row,.sum-grid,.about-facts';
-var items=document.querySelectorAll('section:not(.hero) .wrap > *, .figs > *, .work-list > *, .parts > li, .take > *, .sector-strip > *, .expertise-list > *, .approach-row > *, .sum-grid > *, .about-facts > li, main > .wrap > *:not(.hero):not(.crumbs)');
+var items=document.querySelectorAll('section:not(.hero) > .wrap > *, main > .wrap > *:not(.hero):not(.crumbs)');
 var lastEnd=0;
 var io=new IntersectionObserver(function(es){var now=performance.now();
  es.sort(function(a,b){return a.boundingClientRect.top-b.boundingClientRect.top;});
@@ -318,13 +318,13 @@ var io=new IntersectionObserver(function(es){var now=performance.now();
  if(e.matches(GROUPS)||e.closest('.hero')||e.tagName==='SCRIPT')return;
  var p=e.parentElement;
  var d=0;if(p&&p.matches(GROUPS)){var idx=[].indexOf.call(p.children,e);d=Math.min(idx,6)*0.09;e.style.transitionDelay=d+'s';}
- var ts=e.querySelectorAll('h1,h2,h3,h4,.tag,.work-title,.figure-num,.fig b,dt');
+ var ts=e.querySelector('h2')&&e.querySelectorAll('h2').length===1&&e.children.length<=3?e.querySelectorAll('h2,.tag'):[];
  var nw=0;[].forEach.call(e.matches('h2')?[e]:e.querySelectorAll('h2'),function(h){if(!h.closest('.hero'))nw=Math.max(nw,splitH(h));});
  e.dataset.d=d;if(nw){var ddv=Math.min(0.35+nw*0.06,1.6);e.style.setProperty('--dd',ddv+'s');e.dataset.dd=ddv;}
  if(e.matches('h1,h2,h3,h4,.tag')===false&&ts.length){
   e.classList.add('rv-seq');e.style.setProperty('--d',d+'s');
   [].forEach.call(ts,function(x){x.classList.add('rv-t');});
-  [].forEach.call(e.querySelectorAll('p,.work-desc,.work-link,.work-year,.fig span,.figure-label,dd,ul,ol,.btn,.btn-outline,img,form,.contact-value,.cover'),function(x){if(!x.closest('.rv-d')&&!x.classList.contains('rv-t'))x.classList.add('rv-d');});
+  [].forEach.call(e.children,function(x){if(!x.classList.contains('rv-t')&&!x.querySelector('h2'))x.classList.add('rv-d');});
  }
  e.classList.add('rv');io.observe(e);});
 var nums=document.querySelectorAll('.figure-num');
