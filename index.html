@@ -7,7 +7,8 @@
 <meta name="description" content="Aurélie Dupassieux, independent strategic advisor in international finance, commodities and cross-border transactions. Briefings and analysis.">
 <meta name="author" content="Aurélie Dupassieux">
 <link rel="canonical" href="https://adupassieux-arch.github.io/">
-<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='10' fill='%2317140F'/%3E%3Ctext x='32' y='42' font-family='Georgia,serif' font-size='28' fill='%23B08D57' text-anchor='middle'%3EAD%3C/text%3E%3C/svg%3E">
+<link rel="icon" type="image/png" sizes="32x32" href="images/favicon-32.png">
+<link rel="apple-touch-icon" href="images/apple-touch-icon.png">
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="AD International Consulting">
 <meta property="og:title" content="AD International Consulting">
@@ -85,6 +86,7 @@
  {
   "@context": "https://schema.org",
   "@type": "ProfessionalService",
+  "logo": "https://adupassieux-arch.github.io/images/logo-adic.png",
   "name": "AD International Consulting",
   "url": "https://adupassieux-arch.github.io/",
   "description": "Aurélie Dupassieux, independent strategic advisor. International finance, commodities and cross-border transactions, with institutional briefings on China, Russia and the United States.",
@@ -226,8 +228,9 @@ header .wrap {
 .brand span { color: var(--ink-soft); font-style: italic; font-weight: 400; }
 
 nav ul {
-  display:flex; gap: 40px; list-style:none;
+  display:flex; gap: 30px; list-style:none;
 }
+.brand { margin-right: 28px; }
 
 nav a {
   font-size: 13px;
@@ -639,7 +642,9 @@ footer .wrap {
   .form-row { grid-template-columns: 1fr; }
   .work-row { grid-template-columns: 1fr; }
   .work-desc { grid-column: 1; }
-  .menu-toggle { display:block; }
+}
+@media (max-width: 1040px) {
+  .menu-toggle { display:block; margin-left:auto; }
   nav ul { display:none; }
   nav.open ul { display:flex; flex-direction:column; gap:18px; position:absolute; top:84px; left:0; right:0; background:var(--beige); padding:24px 26px; border-bottom:1px solid var(--beige-line); }
 }
@@ -647,13 +652,20 @@ footer .wrap {
 @media (prefers-reduced-motion: reduce) {
   * { transition: none !important; }
 }
+.brand{display:inline-flex;align-items:center;white-space:nowrap}
+.brand span{margin-left:.28em}
+.brand-mark{height:40px;width:auto;margin-right:12px}
+@media (max-width:420px){.brand{font-size:16px}.brand-mark{height:34px;margin-right:9px}}
+.foot-brand{display:flex;align-items:center;gap:18px}
+.foot-brand img{height:110px;width:auto}
+@media (max-width:860px){footer .wrap{flex-direction:column;gap:14px;text-align:center}}
 </style>
 </head>
 <body>
 
 <header>
   <div class="wrap">
-    <a href="#top" class="brand">AD International <span>Consulting</span></a>
+    <a href="#top" class="brand"><img src="images/logo-mark.png" alt="" width="29" height="40" class="brand-mark">AD International <span>Consulting</span></a>
     <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="site-nav" aria-label="Open menu">Menu</button>
     <nav id="site-nav">
       <ul>
@@ -1007,7 +1019,7 @@ footer .wrap {
 
 <footer>
   <div class="wrap">
-    <div>AD International Consulting — Aurélie Dupassieux</div>
+    <div class="foot-brand"><img src="images/logo-adic.png" alt="AD International Consulting logo" width="130" height="80" loading="lazy"><span>Aurélie Dupassieux</span></div>
     <div>© 2026. All rights reserved. · <a href="legal/" class="foot-legal">Legal notice</a></div>
   </div>
 </footer>
