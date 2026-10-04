@@ -671,7 +671,10 @@ footer .wrap {
 .rv.rv-seq{opacity:1;transform:none;transition:none}
 .rv-seq .rv-t,.rv-seq .rv-d{opacity:0;transform:translateY(16px);transition:opacity .85s ease,transform .85s cubic-bezier(.2,.7,.2,1)}
 .rv-seq.in .rv-t{opacity:1;transform:none;transition-delay:calc(var(--d,0s) + .05s)}
-.rv-seq.in .rv-d{opacity:1;transform:none;transition-delay:calc(var(--d,0s) + .5s)}
+.rv-seq.in .rv-d{opacity:1;transform:none;transition-delay:calc(var(--d,0s) + var(--dd,.5s))}
+h2.split{opacity:1!important;transform:none!important}
+h2.split .w{display:inline-block;opacity:0;transform:translateY(.45em);filter:blur(3px);transition:opacity .7s ease,transform .8s cubic-bezier(.2,.7,.2,1),filter .7s ease}
+.in h2.split .w,h2.split.in .w{opacity:1;transform:none;filter:none}
 .hero-in{opacity:0;transform:translateY(16px);animation:heroUp 1s cubic-bezier(.2,.7,.2,1) forwards}
 @keyframes heroUp{to{opacity:1;transform:none}}
 .hero-logo.hero-in{transform:scale(.96);animation-name:heroLogo;animation-duration:1.3s}
@@ -691,7 +694,7 @@ a.work-row:hover .work-title{transform:translateX(8px)}
 html[dir=rtl] a.work-row:hover .work-title{transform:translateX(-8px)}
 .sector-chip,.fig{transition:transform .45s ease,box-shadow .45s ease}
 .sector-chip:hover,.fig:hover{transform:translateY(-3px);box-shadow:0 12px 24px -18px rgba(23,20,15,.5)}
-@media (prefers-reduced-motion:reduce){.rv,.hero-in,.rv-t,.rv-d{opacity:1!important;transform:none!important;transition:none!important;animation:none!important}
+@media (prefers-reduced-motion:reduce){h2.split .w,.rv,.hero-in,.rv-t,.rv-d{opacity:1!important;transform:none!important;transition:none!important;animation:none!important}
  .btn:hover,.btn-outline:hover,.sector-chip:hover,.fig:hover,a.work-row:hover .work-title,.cover:hover img,article a:hover img{transform:none!important}}
 
 </style>
@@ -1072,14 +1075,30 @@ if(rm||!('IntersectionObserver' in window))return;
 var hero=document.querySelector('.hero');
 if(hero){var hs=hero.querySelectorAll('.hero-logo,.hero-kicker,.kicker,h1,.hero-desc,.lead,.hero .btn,.hero .btn-outline,.hero .meta,.hero-figures>div,.hero .cover,.crumbs');
  [].forEach.call(hs,function(e,i){e.style.animationDelay=(0.08+i*0.11)+'s';e.classList.add('hero-in');});}
+function splitH(h){var cjk=/[㐀-鿿]/.test(h.textContent);var k=0;
+ (function walk(n){[].slice.call(n.childNodes).forEach(function(c){
+  if(c.nodeType===3){var parts=cjk?c.textContent.match(/[\s\S]{1,2}/g)||[]:c.textContent.split(/(\s+)/);var f=document.createDocumentFragment();
+   parts.forEach(function(s){if(!s)return;if(/^\s+$/.test(s)){f.appendChild(document.createTextNode(s));return;}
+    var sp=document.createElement('span');sp.className='w';sp.textContent=s;sp.style.transitionDelay=(0.04+k*0.06)+'s';k++;f.appendChild(sp);});
+   c.parentNode.replaceChild(f,c);}else if(c.nodeType===1){walk(c);}});})(h);
+ h.classList.add('split');return k;}
 var GROUPS='.figs,.work-list,.parts,.take,.sector-strip,.expertise-list,.approach-row,.sum-grid,.about-facts';
 var items=document.querySelectorAll('section:not(.hero) .wrap > *, .figs > *, .work-list > *, .parts > li, .take > *, .sector-strip > *, .expertise-list > *, .approach-row > *, .sum-grid > *, .about-facts > li, main > .wrap > *:not(.hero):not(.crumbs)');
-var io=new IntersectionObserver(function(es){es.forEach(function(en){if(en.isIntersecting){en.target.classList.add('in');io.unobserve(en.target);}});},{rootMargin:'0px 0px -8% 0px',threshold:0.08});
+var lastEnd=0;
+var io=new IntersectionObserver(function(es){var now=performance.now();
+ es.sort(function(a,b){return a.boundingClientRect.top-b.boundingClientRect.top;});
+ es.forEach(function(en){if(!en.isIntersecting)return;var el=en.target;io.unobserve(el);
+  var base=parseFloat(el.dataset.d||0),dd=parseFloat(el.dataset.dd||0);
+  if(dd){lastEnd=Math.max(lastEnd,now+(base+dd)*1000);}
+  else{var extra=Math.max(0,(lastEnd-now)/1000);if(extra){el.style.transitionDelay=(base+extra)+'s';el.style.setProperty('--d',(base+extra)+'s');}}
+  el.classList.add('in');});},{rootMargin:'0px 0px -8% 0px',threshold:0.08});
 [].forEach.call(items,function(e){
  if(e.matches(GROUPS)||e.closest('.hero')||e.tagName==='SCRIPT')return;
  var p=e.parentElement;
  var d=0;if(p&&p.matches(GROUPS)){var idx=[].indexOf.call(p.children,e);d=Math.min(idx,6)*0.09;e.style.transitionDelay=d+'s';}
  var ts=e.querySelectorAll('h1,h2,h3,h4,.tag,.work-title,.figure-num,.fig b,dt');
+ var nw=0;[].forEach.call(e.matches('h2')?[e]:e.querySelectorAll('h2'),function(h){if(!h.closest('.hero'))nw=Math.max(nw,splitH(h));});
+ e.dataset.d=d;if(nw){var ddv=Math.min(0.35+nw*0.06,1.6);e.style.setProperty('--dd',ddv+'s');e.dataset.dd=ddv;}
  if(e.matches('h1,h2,h3,h4,.tag')===false&&ts.length){
   e.classList.add('rv-seq');e.style.setProperty('--d',d+'s');
   [].forEach.call(ts,function(x){x.classList.add('rv-t');});
