@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+
+<html lang="zh-Hans">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>JPM Coin详解：JPMorgan的存款代币</title>
+<meta content="JPM Coin是什么、与比特币及稳定币有何区别、1:1美元支持、Kinexys与Base通道，以及基于KYC/反洗钱的准入机制。" name="description"/>
+<meta content="Aurélie Dupassieux" name="author"/>
+<link href="https://adupassieux-arch.github.io/zh/publications/jpm-coin-explained.html" rel="canonical"/>
+<link href="../../images/favicon-32.png" rel="icon" sizes="32x32" type="image/png"/>
+<link href="../../images/apple-touch-icon.png" rel="apple-touch-icon"/>
+<meta content="article" property="og:type"/>
+<meta content="AD International Consulting" property="og:site_name"/>
+<meta content="JPM Coin：机构数字存款解析" property="og:title"/>
+<meta content="JPM Coin是什么、与比特币及稳定币有何区别、1:1美元支持、Kinexys与Base通道，以及基于KYC/反洗钱的准入机制。" property="og:description"/>
+<meta content="https://adupassieux-arch.github.io/zh/publications/jpm-coin-explained.html" property="og:url"/>
+<meta content="https://adupassieux-arch.github.io/publications/jpm-coin-cover.jpg" property="og:image"/>
+<meta content="Aurélie Dupassieux" property="article:author"/>
+<meta content="summary_large_image" name="twitter:card"/>
+<meta content="@mclbank" name="twitter:creator"/>
+<meta content="JPM Coin：机构数字存款解析" name="twitter:title"/>
+<meta content="JPM Coin是什么、与比特币及稳定币有何区别、1:1美元支持、Kinexys与Base通道，以及基于KYC/反洗钱的准入机制。" name="twitter:description"/>
+<meta content="https://adupassieux-arch.github.io/publications/jpm-coin-cover.jpg" name="twitter:image"/>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500&amp;family=Montserrat:wght@300;400;500;600&amp;display=swap" rel="stylesheet"/>
+<script type="application/ld+json">
+[
+ {
+  "@context": "https://schema.org",
+  "@type": "Report",
+  "headline": "JPM Coin：机构数字存款解析",
+  "name": "JPM Coin：机构数字存款解析",
+  "description": "JPM Coin 是什么, how it differs from Bitcoin and stablecoins, its 1:1 dollar backing, the Kinexys and Base infrastructure, 24/7 settlement and KYC/AML-gated access.",
+  "url": "https://adupassieux-arch.github.io/publications/jpm-coin-explained.html",
+  "image": "https://adupassieux-arch.github.io/publications/jpm-coin-cover.jpg",
+  "inLanguage": "zh-Hans",
+  "author": {
+   "@type": "Person",
+   "name": "Aurélie Dupassieux",
+   "url": "https://adupassieux-arch.github.io/"
+  },
+  "publisher": {
+   "@type": "Organization",
+   "name": "AD International Consulting",
+   "url": "https://adupassieux-arch.github.io/"
+  },
+  "about": [
+   "JPM Coin",
+   "Deposit tokens",
+   "Kinexys",
+   "Institutional payments"
+  ],
+  "encoding": {
+   "@type": "MediaObject",
+   "contentUrl": "https://adupassieux-arch.github.io/JPMCoin.InstitutionalBriefing.pdf?v=20261004b",
+   "encodingFormat": "application/pdf"
+  }
+ },
+ {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+   {
+    "@type": "ListItem",
+    "position": 1,
+    "name": "Home",
+    "item": "https://adupassieux-arch.github.io/"
+   },
+   {
+    "@type": "ListItem",
+    "position": 2,
+    "name": "Publications",
+    "item": "https://adupassieux-arch.github.io/#publications"
+   },
+   {
+    "@type": "ListItem",
+    "position": 3,
+    "name": "JPM Coin",
+    "item": "https://adupassieux-arch.github.io/publications/jpm-coin-explained.html"
+   }
+  ]
+ }
+]
+</script>
+<style>
+:root{--beige:#EDE6D6;--beige-line:#C9B98F;--black:#17140F;--ink:#221F19;--ink-soft:#57503F;--white:#FFFFFF;--gold:#B08D57}
+*,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
+body{background:var(--beige);color:var(--ink);font-family:'Montserrat','Noto Sans SC',sans-serif;font-weight:300;font-size:16px;line-height:1.7}
+h1,h2,h3{font-family:'Playfair Display','Noto Serif SC',serif;font-weight:500;color:var(--black)}
+a{color:inherit}
+.wrap{max-width:1100px;margin:0 auto;padding:0 48px}
+header{border-bottom:1px solid var(--beige-line)}
+header .wrap{display:flex;justify-content:space-between;align-items:center;height:84px}
+.brand{font-family:'Playfair Display','Noto Serif SC',serif;font-size:19px;color:var(--black);text-decoration:none}
+.brand span{color:var(--ink-soft);font-style:italic}
+.back{font-size:13px;text-decoration:none;border-bottom:1px solid transparent}
+.back:hover{border-color:var(--black)}
+.crumbs{font-size:12px;color:var(--ink-soft);margin:40px 0 0;letter-spacing:.03em}
+.crumbs a{text-decoration:none}
+.hero{display:grid;grid-template-columns:1.1fr 1fr;gap:56px;align-items:center;padding:36px 0 80px}
+.kicker{font-size:12px;font-weight:600;letter-spacing:.18em;color:var(--gold);margin-bottom:18px}
+.hero h1{font-size:clamp(36px,4.5vw,54px);line-height:1.1;margin-bottom:22px}
+.lead{font-size:17px;color:var(--ink-soft);margin-bottom:30px}
+.btn{display:inline-block;padding:15px 34px;background:var(--black);color:var(--beige);text-decoration:none;font-size:13px;letter-spacing:.04em}
+.btn:hover{background:#322c22}
+.meta{font-size:12.5px;color:var(--ink-soft);margin-top:14px}
+.cover img{width:100%;height:auto;display:block;border:1px solid var(--beige-line)}
+section{padding:80px 0}
+section.alt{background:var(--white)}
+.tag{font-size:13px;color:var(--ink-soft);margin-bottom:10px}
+h2{font-size:clamp(26px,3vw,34px);line-height:1.2;margin-bottom:40px}
+.figs{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--beige-line);border:1px solid var(--beige-line)}
+.fig{background:var(--white);padding:30px}
+section.alt .fig{background:var(--beige)}
+.fig b{display:block;font-family:'Playfair Display','Noto Serif SC',serif;font-weight:500;font-size:32px;color:var(--black);line-height:1.2}
+.fig span{font-size:13.5px;color:var(--ink-soft)}
+.parts{list-style:none;counter-reset:p}
+.parts li{display:grid;grid-template-columns:70px 1fr;gap:20px;padding:26px 0;border-top:1px solid var(--beige-line)}
+.parts li:last-child{border-bottom:1px solid var(--beige-line)}
+.parts .n{font-family:'Playfair Display','Noto Serif SC',serif;font-size:26px;color:var(--gold)}
+.parts h3{font-size:21px;margin-bottom:6px}
+.parts p{font-size:15px;color:var(--ink-soft)}
+.take{display:grid;grid-template-columns:repeat(2,1fr);gap:28px}
+.take div{border-top:1px solid var(--black);padding-top:18px}
+.take h3{font-size:19px;margin-bottom:8px}
+.take p{font-size:14.5px;color:var(--ink-soft)}
+.src{columns:2;column-gap:48px;font-size:14px;color:var(--ink-soft);padding-left:18px}
+.src li{margin-bottom:8px;break-inside:avoid}
+.note{margin-top:30px;font-size:13px;color:var(--ink-soft);font-style:italic}
+.more{display:flex;flex-wrap:wrap;gap:14px;margin-top:10px}
+.more a{border:1px solid var(--black);padding:12px 22px;font-size:13px;text-decoration:none;color:var(--black)}
+footer{border-top:1px solid var(--beige-line);padding:40px 0}
+footer .wrap{display:flex;justify-content:space-between;font-size:12.5px;color:var(--ink-soft)}
+@media (max-width:860px){.wrap{padding:0 26px}.hero{grid-template-columns:1fr;gap:32px}.figs{grid-template-columns:1fr 1fr}.take{grid-template-columns:1fr}.src{columns:1}footer .wrap{flex-direction:column;gap:6px}}
+@media (max-width:520px){.figs{grid-template-columns:1fr}.parts li{grid-template-columns:44px 1fr}}
+
+table.cmp{width:100%;border-collapse:collapse;font-size:14.5px;background:var(--white)}
+section.alt table.cmp{background:var(--beige)}
+.cmp th,.cmp td{text-align:left;padding:14px 16px;border-bottom:1px solid var(--beige-line);vertical-align:top}
+.cmp thead th{font-family:'Playfair Display','Noto Serif SC',serif;font-weight:500;font-size:17px;color:var(--black);border-bottom:1px solid var(--black)}
+.cmp tbody th{font-weight:500;color:var(--black);width:18%}
+.cmp td.hl{color:var(--black);font-weight:500}
+.tbl{overflow-x:auto;-webkit-overflow-scrolling:touch}
+@media (max-width:860px){table.cmp{min-width:600px;font-size:13px}.cmp th,.cmp td{padding:10px 12px}}
+.brand{display:inline-flex;align-items:center;white-space:nowrap}
+.brand span{margin-left:.28em}
+.brand-mark{height:40px;width:auto;margin-right:12px}
+@media (max-width:420px){.brand{font-size:16px}.brand-mark{height:34px;margin-right:9px}}
+
+.hdr-right{display:flex;align-items:center;gap:22px}.lang{font-size:13px;letter-spacing:.04em;text-decoration:none;color:inherit;border:1px solid currentColor;padding:3px 9px;opacity:.8}.lang:hover{opacity:1}.lang{white-space:nowrap}@media (max-width:560px){.hdr-right .back{display:none}}
+</style>
+<link href="https://adupassieux-arch.github.io/publications/jpm-coin-explained.html" hreflang="en" rel="alternate"/><link href="https://adupassieux-arch.github.io/zh/publications/jpm-coin-explained.html" hreflang="zh-Hans" rel="alternate"/><link href="https://adupassieux-arch.github.io/publications/jpm-coin-explained.html" hreflang="x-default" rel="alternate"/><link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@300;400;500&amp;family=Noto+Serif+SC:wght@400;500&amp;display=swap" rel="stylesheet"/></head>
+<body>
+<header>
+<div class="wrap">
+<a class="brand" href="../"><img alt="" class="brand-mark" height="40" src="../../images/logo-mark.png" width="29"/>AD International <span>Consulting</span></a>
+<span class="hdr-right"><a class="lang" href="../../publications/jpm-coin-explained.html" lang="en" hreflang="en">EN</a><a class="back" href="../#publications">← 全部出版物</a></span>
+</div>
+</header>
+<main>
+<div class="wrap">
+<nav aria-label="导航路径" class="crumbs"><a href="../">首页</a> / <a href="../#publications">出版物</a> / JPM Coin</nav>
+<div class="hero">
+<div>
+<div class="kicker">机构简报 · 2026</div>
+<h1>JPM Coin：机构数字存款解析</h1>
+<p class="lead">由JPMorgan Chase发行的数字美元银行存款代币，用于经审核的机构客户之间的即时结算：它并非一种新的货币形式，而是转移既有资金的一种更快速、可编程的方式。</p>
+<a class="btn" href="../../JPMCoin.InstitutionalBriefing.pdf?v=20261004b" rel="noopener" target="_blank">阅读完整简报（PDF） →</a>
+<p class="meta">10页 · 英文 · 作者：Aurélie Dupassieux，AD International Consulting</p>
+</div>
+<a class="cover" href="../../JPMCoin.InstitutionalBriefing.pdf?v=20261004b" rel="noopener" target="_blank"><img alt="简报封面：JPM Coin：机构数字存款详解" height="825" src="../../publications/jpm-coin-cover.jpg" width="1467"/></a>
+</div>
+</div>
+<section class="alt">
+<div class="wrap">
+<div class="tag">关键事实</div>
+<h2>JPM Coin概览</h2>
+<div class="figs">
+<div class="fig"><b>1:1</b><span>与存放于JPMorgan的1美元真实资金挂钩</span></div>
+<div class="fig"><b>24/7/365</b><span>数秒内完成结算，无截止时间</span></div>
+<div class="fig"><b>JPMorgan Chase</b><span>发行方：受监管银行，直接资产负债表负债</span></div>
+<div class="fig"><b>Kinexys + Base</b><span>JPMorgan的区块链平台及一个二层（Layer-2）网络</span></div>
+<div class="fig"><b>仅限机构</b><span>不向公众或零售客户开放</span></div>
+<div class="fig"><b>KYC / 反洗钱</b><span>准入前审核，准入后监控</span></div>
+</div>
+</div>
+</section>
+<section>
+<div class="wrap">
+<div class="tag">比较</div>
+<h2>并非公共加密货币</h2>
+<div class="tbl"><table class="cmp">
+<thead><tr><th scope="col"></th><th scope="col">JPM Coin</th><th scope="col">Bitcoin</th><th scope="col">公共稳定币（如USDT）</th></tr></thead>
+<tbody>
+<tr><th scope="row">发行方</th><td class="hl">JPMorgan Chase（受监管银行）</td><td>无中央发行方</td><td>私营公司</td></tr>
+<tr><th scope="row">准入</th><td class="hl">仅限经审核机构</td><td>向任何人开放</td><td>向任何人开放</td></tr>
+<tr><th scope="row">交易</th><td class="hl">不公开交易</td><td>在公开交易所交易</td><td>在公开交易所交易</td></tr>
+<tr><th scope="row">支撑资产</th><td class="hl">银行直接负债，1:1美元</td><td>无支撑资产</td><td>声称有储备支撑，第三方审计</td></tr>
+</tbody>
+</table></div>
+</div>
+</section>
+<section class="alt">
+<div class="wrap">
+<div class="tag">简报内容</div>
+<h2>六个章节，十页</h2>
+<ol class="parts">
+<li><div class="n">01</div><div><h3>JPM Coin 是什么</h3><p>面向机构的数字美元存款代币：一种代币化的银行存款，让您的美元在更快的通道上流转。</p></div></li>
+<li><div class="n">02</div><div><h3>并非公共加密货币</h3><p>在发行方、准入、交易和支持资产方面与比特币及公共稳定币的区别。</p></div></li>
+<li><div class="n">03</div><div><h3>支持资产与负债</h3><p>每枚代币与美元1:1挂钩，并记录在JPMorgan自身的资产负债表上；其价值不浮动。</p></div></li>
+<li><div class="n">04</div><div><h3>基础设施</h3><p>Kinexys平台与Base二层（Layer-2）网络：全天候运行的通道，无市场收盘或批处理截止时间。</p></div></li>
+<li><div class="n">05</div><div><h3>用途与风险缓释</h3><p>全年无休（24/7/365）秒级结算，消除执行与结算之间的时滞，降低交易对手风险。</p></div></li>
+<li><div class="n">06</div><div><h3>准入与合规</h3><p>封闭网络：仅限机构参与者，须通过KYC验证及持续的反洗钱筛查。</p></div></li>
+</ol>
+</div>
+</section>
+<section>
+<div class="wrap">
+<div class="tag">要点</div>
+<h2>需要记住的内容</h2>
+<div class="take">
+<div><h3>代币化的银行存款</h3><p>并非公共加密货币：与真实美元1:1挂钩。</p></div>
+<div><h3>为速度而建</h3><p>机构级秒级结算，全年无休（24/7/365）。</p></div>
+<div><h3>降低大额交易风险</h3><p>减少结算延迟和交易对手风险。</p></div>
+<div><h3>准入受限</h3><p>仅限经KYC/反洗钱审核的机构参与者。</p></div>
+</div>
+<div style="margin-top:44px"><a class="btn" href="../../JPMCoin.InstitutionalBriefing.pdf?v=20261004b" rel="noopener" target="_blank">下载PDF →</a></div>
+<p class="note">本简报仅供教育和参考之用，不构成投资或法律建议。</p>
+<div style="margin-top:56px">
+<div class="tag">相关简报</div>
+<div class="more">
+<a href="../briefings/united-states-in-2026.html">2026年的美国 →</a>
+<a href="../briefings/china-in-2026.html">2026年的中国 →</a>
+<a href="../briefings/russia-in-2026.html">2026年的俄罗斯 →</a>
+</div>
+</div>
+</div>
+</section>
+</main>
+<footer>
+<div class="wrap">
+<div>AD International Consulting — Aurélie Dupassieux</div>
+<div><a href="../#contact">联系</a> · © 2026。保留所有权利。</div>
+</div>
+</footer>
+</body>
+</html>

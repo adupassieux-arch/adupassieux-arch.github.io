@@ -1,0 +1,333 @@
+<!DOCTYPE html>
+
+<html lang="zh-Hans">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>备用信用证（SBLC）详解</title>
+<meta content="备用信用证在贸易融资中的运作方式：其在交易中的流转路径、与商业信用证的区别、ISP98 与 UCP 600 规则，以及尽职调查。" name="description"/>
+<meta content="Aurélie Dupassieux" name="author"/>
+<link href="https://adupassieux-arch.github.io/zh/publications/standby-letters-of-credit.html" rel="canonical"/>
+<link href="../../images/favicon-32.png" rel="icon" sizes="32x32" type="image/png"/>
+<link href="../../images/apple-touch-icon.png" rel="apple-touch-icon"/>
+<meta content="article" property="og:type"/>
+<meta content="AD International Consulting" property="og:site_name"/>
+<meta content="备用信用证：全球贸易融资的信任引擎" property="og:title"/>
+<meta content="备用信用证在贸易融资中的运作方式：其在交易中的流转路径、与商业信用证的区别、ISP98 与 UCP 600 规则，以及尽职调查。" property="og:description"/>
+<meta content="https://adupassieux-arch.github.io/zh/publications/standby-letters-of-credit.html" property="og:url"/>
+<meta content="https://adupassieux-arch.github.io/publications/sblc-cover.jpg" property="og:image"/>
+<meta content="Aurélie Dupassieux" property="article:author"/>
+<meta content="summary_large_image" name="twitter:card"/>
+<meta content="@mclbank" name="twitter:creator"/>
+<meta content="备用信用证：全球贸易融资的信任引擎" name="twitter:title"/>
+<meta content="备用信用证在贸易融资中的运作方式：其在交易中的流转路径、与商业信用证的区别、ISP98 与 UCP 600 规则，以及尽职调查。" name="twitter:description"/>
+<meta content="https://adupassieux-arch.github.io/publications/sblc-cover.jpg" name="twitter:image"/>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500&amp;family=Montserrat:wght@300;400;500;600&amp;display=swap" rel="stylesheet"/>
+<script type="application/ld+json">
+[
+ {
+  "@context": "https://schema.org",
+  "@type": "Report",
+  "headline": "备用信用证：全球贸易融资的信任引擎",
+  "name": "备用信用证：全球贸易融资的信任引擎",
+  "description": "A trade finance primer on SBLCs: how they move through a trade, how they differ from a commercial LC, ISP98 and UCP 600 rules, common use cases and the due-diligence checks that matter.",
+  "url": "https://adupassieux-arch.github.io/publications/standby-letters-of-credit.html",
+  "image": "https://adupassieux-arch.github.io/publications/sblc-cover.jpg",
+  "inLanguage": "zh-Hans",
+  "author": {
+   "@type": "Person",
+   "name": "Aurélie Dupassieux",
+   "url": "https://adupassieux-arch.github.io/"
+  },
+  "publisher": {
+   "@type": "Organization",
+   "name": "AD International Consulting",
+   "url": "https://adupassieux-arch.github.io/"
+  },
+  "about": [
+   "Standby letter of credit",
+   "Trade finance",
+   "ISP98",
+   "UCP 600"
+  ],
+  "encoding": {
+   "@type": "MediaObject",
+   "contentUrl": "https://adupassieux-arch.github.io/publications/Standby_Letters_of_Credit.pdf?v=20261004b",
+   "encodingFormat": "application/pdf"
+  }
+ },
+ {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+   {
+    "@type": "Question",
+    "name": "What is a standby letter of credit (SBLC)?",
+    "acceptedAnswer": {
+     "@type": "Answer",
+     "text": "A bank-issued guarantee of payment. Unlike a commercial letter of credit, it is a backstop: the issuing bank only pays the beneficiary if the applicant fails to perform or pay as agreed."
+    }
+   },
+   {
+    "@type": "Question",
+    "name": "What is the difference between an SBLC and a commercial letter of credit?",
+    "acceptedAnswer": {
+     "@type": "Answer",
+     "text": "An SBLC is security that is rarely drawn, only on non-performance or default, and is usually governed by ISP98. A commercial LC is the primary payment method for a trade, drawn routinely against shipping documents under UCP 600."
+    }
+   },
+   {
+    "@type": "Question",
+    "name": "Which rules govern SBLCs?",
+    "acceptedAnswer": {
+     "@type": "Answer",
+     "text": "Most SBLCs follow International Chamber of Commerce rules: ISP98 (International Standby Practices) or UCP 600, alongside the issuing bank's local banking, AML and sanctions law."
+    }
+   }
+  ]
+ },
+ {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+   {
+    "@type": "ListItem",
+    "position": 1,
+    "name": "Home",
+    "item": "https://adupassieux-arch.github.io/"
+   },
+   {
+    "@type": "ListItem",
+    "position": 2,
+    "name": "Publications",
+    "item": "https://adupassieux-arch.github.io/#publications"
+   },
+   {
+    "@type": "ListItem",
+    "position": 3,
+    "name": "Standby Letters of Credit",
+    "item": "https://adupassieux-arch.github.io/publications/standby-letters-of-credit.html"
+   }
+  ]
+ }
+]
+</script>
+<style>
+:root{--beige:#EDE6D6;--beige-line:#C9B98F;--black:#17140F;--ink:#221F19;--ink-soft:#57503F;--white:#FFFFFF;--gold:#B08D57}
+*,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
+body{background:var(--beige);color:var(--ink);font-family:'Montserrat','Noto Sans SC',sans-serif;font-weight:300;font-size:16px;line-height:1.7}
+h1,h2,h3{font-family:'Playfair Display','Noto Serif SC',serif;font-weight:500;color:var(--black)}
+a{color:inherit}
+.wrap{max-width:1100px;margin:0 auto;padding:0 48px}
+header{border-bottom:1px solid var(--beige-line)}
+header .wrap{display:flex;justify-content:space-between;align-items:center;height:84px}
+.brand{font-family:'Playfair Display','Noto Serif SC',serif;font-size:19px;color:var(--black);text-decoration:none}
+.brand span{color:var(--ink-soft);font-style:italic}
+.back{font-size:13px;text-decoration:none;border-bottom:1px solid transparent}
+.back:hover{border-color:var(--black)}
+.crumbs{font-size:12px;color:var(--ink-soft);margin:40px 0 0;letter-spacing:.03em}
+.crumbs a{text-decoration:none}
+.hero{display:grid;grid-template-columns:1.1fr 1fr;gap:56px;align-items:center;padding:36px 0 80px}
+.kicker{font-size:12px;font-weight:600;letter-spacing:.18em;color:var(--gold);margin-bottom:18px}
+.hero h1{font-size:clamp(36px,4.5vw,54px);line-height:1.1;margin-bottom:22px}
+.lead{font-size:17px;color:var(--ink-soft);margin-bottom:30px}
+.btn{display:inline-block;padding:15px 34px;background:var(--black);color:var(--beige);text-decoration:none;font-size:13px;letter-spacing:.04em}
+.btn:hover{background:#322c22}
+.meta{font-size:12.5px;color:var(--ink-soft);margin-top:14px}
+.cover img{width:100%;height:auto;display:block;border:1px solid var(--beige-line)}
+section{padding:80px 0}
+section.alt{background:var(--white)}
+.tag{font-size:13px;color:var(--ink-soft);margin-bottom:10px}
+h2{font-size:clamp(26px,3vw,34px);line-height:1.2;margin-bottom:40px}
+.figs{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--beige-line);border:1px solid var(--beige-line)}
+.fig{background:var(--white);padding:30px}
+section.alt .fig{background:var(--beige)}
+.fig b{display:block;font-family:'Playfair Display','Noto Serif SC',serif;font-weight:500;font-size:32px;color:var(--black);line-height:1.2}
+.fig span{font-size:13.5px;color:var(--ink-soft)}
+.parts{list-style:none;counter-reset:p}
+.parts li{display:grid;grid-template-columns:70px 1fr;gap:20px;padding:26px 0;border-top:1px solid var(--beige-line)}
+.parts li:last-child{border-bottom:1px solid var(--beige-line)}
+.parts .n{font-family:'Playfair Display','Noto Serif SC',serif;font-size:26px;color:var(--gold)}
+.parts h3{font-size:21px;margin-bottom:6px}
+.parts p{font-size:15px;color:var(--ink-soft)}
+.take{display:grid;grid-template-columns:repeat(2,1fr);gap:28px}
+.take div{border-top:1px solid var(--black);padding-top:18px}
+.take h3{font-size:19px;margin-bottom:8px}
+.take p{font-size:14.5px;color:var(--ink-soft)}
+.src{columns:2;column-gap:48px;font-size:14px;color:var(--ink-soft);padding-left:18px}
+.src li{margin-bottom:8px;break-inside:avoid}
+.note{margin-top:30px;font-size:13px;color:var(--ink-soft);font-style:italic}
+.more{display:flex;flex-wrap:wrap;gap:14px;margin-top:10px}
+.more a{border:1px solid var(--black);padding:12px 22px;font-size:13px;text-decoration:none;color:var(--black)}
+footer{border-top:1px solid var(--beige-line);padding:40px 0}
+footer .wrap{display:flex;justify-content:space-between;font-size:12.5px;color:var(--ink-soft)}
+@media (max-width:860px){.wrap{padding:0 26px}.hero{grid-template-columns:1fr;gap:32px}.figs{grid-template-columns:1fr 1fr}.take{grid-template-columns:1fr}.src{columns:1}footer .wrap{flex-direction:column;gap:6px}}
+@media (max-width:520px){.figs{grid-template-columns:1fr}.parts li{grid-template-columns:44px 1fr}}
+
+table.cmp{width:100%;border-collapse:collapse;font-size:14.5px;background:var(--white)}
+section.alt table.cmp{background:var(--beige)}
+.cmp th,.cmp td{text-align:left;padding:14px 16px;border-bottom:1px solid var(--beige-line);vertical-align:top}
+.cmp thead th{font-family:'Playfair Display','Noto Serif SC',serif;font-weight:500;font-size:17px;color:var(--black);border-bottom:1px solid var(--black)}
+.cmp tbody th{font-weight:500;color:var(--black);width:20%}
+.cmp td.hl{color:var(--black);font-weight:500}
+.tbl{overflow-x:auto;-webkit-overflow-scrolling:touch}
+.two{display:grid;grid-template-columns:1fr 1fr;gap:48px}
+.two h3{font-size:22px;margin-bottom:16px}
+.two ul{list-style:none}
+.two li{padding:14px 0;border-top:1px solid var(--beige-line);font-size:14.5px;color:var(--ink-soft)}
+.two li b{display:block;color:var(--black);font-weight:500;font-size:15px;margin-bottom:2px}
+.quote{font-family:'Playfair Display','Noto Serif SC',serif;font-size:clamp(28px,3.4vw,42px);line-height:1.25;color:var(--black);max-width:820px}
+.quote em{color:var(--ink-soft)}
+@media (max-width:860px){table.cmp{min-width:560px;font-size:13px}.cmp th,.cmp td{padding:10px 12px}.two{grid-template-columns:1fr;gap:32px}}
+.brand{display:inline-flex;align-items:center;white-space:nowrap}
+.brand span{margin-left:.28em}
+.brand-mark{height:40px;width:auto;margin-right:12px}
+@media (max-width:420px){.brand{font-size:16px}.brand-mark{height:34px;margin-right:9px}}
+
+.hdr-right{display:flex;align-items:center;gap:22px}.lang{font-size:13px;letter-spacing:.04em;text-decoration:none;color:inherit;border:1px solid currentColor;padding:3px 9px;opacity:.8}.lang:hover{opacity:1}.lang{white-space:nowrap}@media (max-width:560px){.hdr-right .back{display:none}}
+</style>
+<link href="https://adupassieux-arch.github.io/publications/standby-letters-of-credit.html" hreflang="en" rel="alternate"/><link href="https://adupassieux-arch.github.io/zh/publications/standby-letters-of-credit.html" hreflang="zh-Hans" rel="alternate"/><link href="https://adupassieux-arch.github.io/publications/standby-letters-of-credit.html" hreflang="x-default" rel="alternate"/><link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@300;400;500&amp;family=Noto+Serif+SC:wght@400;500&amp;display=swap" rel="stylesheet"/></head>
+<body>
+<header>
+<div class="wrap">
+<a class="brand" href="../"><img alt="" class="brand-mark" height="40" src="../../images/logo-mark.png" width="29"/>AD International <span>Consulting</span></a>
+<span class="hdr-right"><a class="lang" href="../../publications/standby-letters-of-credit.html" lang="en" hreflang="en">EN</a><a class="back" href="../#publications">← 全部出版物</a></span>
+</div>
+</header>
+<main>
+<div class="wrap">
+<nav aria-label="导航路径" class="crumbs"><a href="../">首页</a> / <a href="../#publications">出版物</a> / 备用信用证</nav>
+<div class="hero">
+<div>
+<div class="kicker">贸易融资入门指南 · 2026</div>
+<h1>备用信用证：全球贸易融资的信任引擎</h1>
+<p class="lead">概述备用信用工具如何降低交易对手风险、释放融资并保障跨境贸易顺畅进行。可以将SBLC视为对一项承诺的保险。</p>
+<a class="btn" href="../../publications/Standby_Letters_of_Credit.pdf?v=20261004b" rel="noopener" target="_blank">阅读完整入门指南（PDF） →</a>
+<p class="meta">12页 · 英文 · 作者：Aurélie Dupassieux，AD International Consulting</p>
+</div>
+<a class="cover" href="../../publications/Standby_Letters_of_Credit.pdf?v=20261004b" rel="noopener" target="_blank"><img alt="入门指南《备用信用证》封面" height="825" src="../../publications/sblc-cover.jpg" width="1467"/></a>
+</div>
+</div>
+<section class="alt">
+<div class="wrap">
+<div class="tag">基础知识</div>
+<h2>SBLC概览</h2>
+<div class="figs">
+<div class="fig"><b>由银行开立</b><span>受监管银行为申请人的付款义务提供担保</span></div>
+<div class="fig"><b>仅在违约时</b><span>仅在申请人未能履约或付款时才可支取</span></div>
+<div class="fig"><b>ISP98 / UCP 600</b><span>国际商会规则</span></div>
+<div class="fig"><b>极少被支取</b><span>作为后备保障，而非主要付款方式</span></div>
+<div class="fig"><b>4种主要用途</b><span>履约、预付款、融资及投标保函</span></div>
+<div class="fig"><b>5个步骤</b><span>从基础合同到支取（仅在必要时）</span></div>
+</div>
+<p class="note">如果卖方按约交货、买方按约付款，SBLC就永远不会被支取。它只在出现问题时才启用，因此能够在可能从未合作过的各方之间建立信任。</p>
+</div>
+</section>
+<section>
+<div class="wrap">
+<div class="tag">运作机制</div>
+<h2>SBLC在交易中的流转</h2>
+<ol class="parts">
+<li><div class="n">01</div><div><h3>基础合同</h3><p>买卖双方商定贸易条款，并要求以SBLC作为担保。</p></div></li>
+<li><div class="n">02</div><div><h3>申请人提出申请</h3><p>买方（申请人）向其银行申请开立以卖方为受益人的SBLC。</p></div></li>
+<li><div class="n">03</div><div><h3>银行开立SBLC</h3><p>开证行审核信用状况和抵押品后开立该工具。</p></div></li>
+<li><div class="n">04</div><div><h3>交易进行</h3><p>货物照常装运，并根据基础合同付款。</p></div></li>
+<li><div class="n">05</div><div><h3>仅在必要时备用</h3><p>若买方违约，卖方根据SBLC条款进行支取。</p></div></li>
+</ol>
+</div>
+</section>
+<section class="alt">
+<div class="wrap">
+<div class="tag">比较</div>
+<h2>备用信用证与商业信用证</h2>
+<div class="tbl"><table class="cmp">
+<thead><tr><th scope="col"></th><th scope="col">备用信用证（SBLC）</th><th scope="col">商业信用证</th></tr></thead>
+<tbody>
+<tr><th scope="row">主要用途</th><td class="hl">出现问题时的后备或担保</td><td>交易的主要付款方式</td></tr>
+<tr><th scope="row">通常是否支取</th><td class="hl">极少，仅在未履约或违约时</td><td>经常，作为标准结算途径</td></tr>
+<tr><th scope="row">常见用途</th><td class="hl">履约、预付款及融资担保</td><td>凭装运单据支付货款</td></tr>
+<tr><th scope="row">适用规则</th><td class="hl">ISP98（或UCP 600）</td><td>UCP 600</td></tr>
+</tbody>
+</table></div>
+</div>
+</section>
+<section>
+<div class="wrap">
+<div class="tag">双方受益</div>
+<h2>弥合买卖双方之间的信任缺口</h2>
+<div class="two">
+<div>
+<h3>卖方为何要求SBLC</h3>
+<ul>
+<li><b>付款确定性</b>以银行的付款义务取代对买方承诺的依赖。</li>
+<li><b>更强的谈判地位</b>使卖方能够接受原本可能拒绝的赊销或延期付款条款。</li>
+<li><b>可融资的抵押品</b>受担保的应收账款本身可用于支持融资或保理。</li>
+<li><b>进入新市场</b>降低在较高风险司法管辖区与陌生买方交易的风险。</li>
+</ul>
+</div>
+<div>
+<h3>买方为何接受甚至偏好SBLC</h3>
+<ul>
+<li><b>无需占用前期现金</b>使用买方的银行授信额度，而非营运资金。</li>
+<li><b>谈判筹码</b>可从未经检验的供应商处争取更优价格或条款。</li>
+<li><b>仅在出现问题时付款</b>仅在有书面记录的未履约情况下才会划转资金。</li>
+<li><b>彰显信用状况</b>银行愿意开立本身即是信誉的体现。</li>
+</ul>
+</div>
+</div>
+</div>
+</section>
+<section class="alt">
+<div class="wrap">
+<div class="tag">应用</div>
+<h2>贸易中的常见用例</h2>
+<div class="take">
+<div><h3>履约SBLC</h3><p>担保承包商或供应商将按规定完成工程或交货。</p></div>
+<div><h3>预付款SBLC</h3><p>在卖方收到预付款后未能交货时，保护买方的定金。</p></div>
+<div><h3>融资SBLC</h3><p>直接为付款义务提供支持，例如贷款偿还或租赁承诺。</p></div>
+<div><h3>投标保函SBLC</h3><p>向项目业主保证中标人将履行其投标承诺。</p></div>
+</div>
+</div>
+</section>
+<section>
+<div class="wrap">
+<div class="tag">风险意识</div>
+<h2>真实工具，真实尽职调查</h2>
+<p class="lead" style="max-width:820px">SBLC之所以有价值，是因为它承载着真实银行的信用。也正因如此，该领域成为一些在任何真实银行关系之外兜售“银行工具”的骗局的目标。以下四项核查可保护合法交易的双方。</p>
+<div class="take">
+<div><h3>直接向开证行核实</h3><p>使用您独立获取的联系方式，直接与银行确认SBLC及其条款。</p></div>
+<div><h3>警惕异常的票面金额</h3><p>合法工具的金额与实际基础合同相匹配，而不会以整数、超大面额提供。</p></div>
+<div><h3>坚持具名条款</h3><p>真实的要约会写明申请人、受益人、金额及适用规则，而非指示性区间。</p></div>
+<div><h3>聘请独立法律顾问</h3><p>请寻求法律及银行方面的专业意见，尤其是在首次合作的交易对手或大额交易的情况下。</p></div>
+</div>
+<p class="note">展望未来：数字化开立与电子交单、银行处理速度加快、制裁及反洗钱筛查趋严，以及小型出口商的可及性扩大。</p>
+</div>
+</section>
+<section class="alt">
+<div class="wrap">
+<div class="tag">要点</div>
+<p class="quote">备用信用证（SBLC）不转移货物， <em>而是传递信任。</em></p>
+<p class="lead" style="max-width:760px;margin-top:22px">在买卖双方可能从未谋面的市场中，备用信用证使两个陌生方能够如长期合作伙伴般放心交易——其保障并非来自承诺，而是来自银行。</p>
+<div style="margin-top:34px"><a class="btn" href="../../publications/Standby_Letters_of_Credit.pdf?v=20261004b" rel="noopener" target="_blank">下载PDF →</a></div>
+<p class="note">本入门指南仅供教育与参考之用，不构成法律、财务或投资建议。</p>
+<div style="margin-top:56px">
+<div class="tag">相关内容</div>
+<div class="more">
+<a href="jpm-coin-explained.html">JPM Coin 详解 →</a>
+<a href="../briefings/united-states-in-2026.html">2026年的美国 →</a>
+<a href="../briefings/china-in-2026.html">2026年的中国 →</a>
+</div>
+</div>
+</div>
+</section>
+</main>
+<footer>
+<div class="wrap">
+<div>AD International Consulting — Aurélie Dupassieux</div>
+<div><a href="../#contact">联系</a> · © 2026。保留所有权利。</div>
+</div>
+</footer>
+</body>
+</html>
