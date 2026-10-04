@@ -165,7 +165,8 @@ h2.split .w{display:inline-block;opacity:0;transform:translateY(.45em);filter:bl
 .hero-logo.hero-in{transform:scale(.96);animation-name:heroLogo;animation-duration:1.3s}
 @keyframes heroLogo{to{opacity:1;transform:none}}
 nav ul li:not(.nav-langs) a{position:relative}
-nav ul li:not(.nav-langs) a::after{content:"";position:absolute;left:0;right:0;bottom:-5px;height:1px;background:currentColor;transform:scaleX(0);transform-origin:right;transition:transform .4s cubic-bezier(.2,.7,.2,1)}
+nav ul li:not(.nav-langs) a:hover{border-color:transparent}
+nav ul li:not(.nav-langs) a::after{content:"";position:absolute;left:0;right:0;bottom:-1px;height:1px;background:currentColor;transform:scaleX(0);transform-origin:right;transition:transform .4s cubic-bezier(.2,.7,.2,1)}
 nav ul li:not(.nav-langs) a:hover::after{transform:scaleX(1);transform-origin:left}
 header{transition:box-shadow .4s ease}
 header.scrolled{box-shadow:0 8px 24px -18px rgba(23,20,15,.45)}
