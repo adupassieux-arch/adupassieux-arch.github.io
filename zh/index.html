@@ -377,6 +377,28 @@ section.alt .expertise-item { background: var(--white); }
   color: var(--ink-soft);
 }
 
+
+/* ─── SERVICES ─── */
+.offer-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:1px;background:var(--beige-line);border:1px solid var(--beige-line)}
+.offer{background:var(--beige);padding:40px;display:flex;flex-direction:column;gap:16px;min-width:0}
+section.alt .offer{background:var(--white)}
+.offer-kind{font-size:12px;font-weight:600;letter-spacing:.18em;text-transform:uppercase;color:var(--ink-soft)}
+.offer h3{font-size:24px;font-weight:500;color:var(--black)}
+.offer p{font-size:14.5px;color:var(--ink-soft);margin:0}
+.offer ul{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:8px;font-size:14px;color:var(--ink)}
+.offer li{padding-left:18px;position:relative}
+.offer li::before{content:"";position:absolute;left:0;top:.75em;width:9px;height:1px;background:var(--black)}
+.offer-price{display:flex;flex-wrap:wrap;gap:14px 40px;border-top:1px solid var(--beige-line);padding-top:16px;margin-top:auto}
+.offer-price b{font-family:'Playfair Display','Noto Serif SC',serif;font-weight:400;font-size:30px;color:var(--black)}
+.offer-price>div{display:flex;flex-direction:column;gap:2px}
+.offer-price span{font-size:13px;color:var(--ink-soft)}
+.offer .btn{align-self:flex-start}
+.offer-foot{display:flex;flex-wrap:wrap;gap:12px 28px;align-items:center;justify-content:space-between;margin-top:28px;font-size:13.5px;color:var(--ink-soft)}
+.offer-foot a{color:var(--black)}
+.field select{width:100%;background:transparent;border:none;border-bottom:1px solid var(--beige-line);padding:8px 0;font-family:'Montserrat',sans-serif;font-size:15px;color:var(--ink);outline:none;border-radius:0}
+.field select:focus{border-color:var(--black)}
+@media (max-width:860px){.offer-grid{grid-template-columns:minmax(0,1fr)}.offer{padding:30px 24px}}
+
 /* ─── APPROACH ─── */
 .approach-row {
   display:grid;
@@ -754,6 +776,7 @@ html[lang="zh-Hans"] nav ul li:not(.nav-langs) a{font-size:13px;letter-spacing:.
 <li><a href="#about">关于</a></li>
 <li><a href="#expertise">专业领域</a></li>
 <li><a href="#approach">工作方法</a></li>
+        <li><a href="#services">服务</a></li>
 <li><a href="#work">项目</a></li>
 <li><a href="#publications">出版物</a></li>
 <li><a href="#briefings">简报</a></li>
@@ -864,6 +887,49 @@ html[lang="zh-Hans"] nav ul li:not(.nav-langs) a{font-size:13px;letter-spacing:.
 </div>
 </div>
 </section>
+
+<section class="alt" id="services">
+<div class="wrap">
+<div class="section-head">
+<div class="tag">服务</div>
+<h2>围绕能源与汇率风险的两种合作方式。</h2>
+</div>
+<div class="offer-grid">
+<article class="offer">
+<div class="offer-kind">月度订阅</div>
+<h3>能源市场简报</h3>
+<p>每月一期英文简报，聚焦原油、液化天然气，以及驱动美国、欧洲与中国之间能源贸易的主要货币。</p>
+<ul>
+<li>一页摘要：市场变化、原因及下月关注要点</li>
+<li>原油、布伦特–WTI价差、天然气与亚洲液化天然气</li>
+<li>欧元/美元、美元/人民币及其与能源价格的联动</li>
+<li>波动率与经回测验证的一个月价格区间</li>
+<li>情景分析及当月重要事件日历</li>
+</ul>
+<div class="offer-price"><div><b>€800</b><span>每月 · 基础版</span></div><div><b>€1,500</b><span>每月 · 含月度电话会议</span></div></div>
+<a href="#contact" class="btn" data-interest="briefing">索取样刊 &rarr;</a>
+</article>
+<article class="offer">
+<div class="offer-kind">三天诊断</div>
+<h3>汇率风险敞口评估</h3>
+<p>适用于以美元或人民币进行采购或销售的进口商、出口商和贸易公司：评估汇率变动对利润率和现金流的影响。</p>
+<ul>
+<li>第1天：按币种、金额和日期梳理全部资金流</li>
+<li>第2天：欧元/美元与美元/人民币变动±5%、±10%、±15%的影响</li>
+<li>第3天：书面报告、风险敞口看板及一小时讲解</li>
+<li>仅衡量风险；对冲决策由贵公司及其银行作出</li>
+</ul>
+<div class="offer-price"><div><b>€2,400</b><span>固定费用 · 签约时支付50%</span></div></div>
+<a href="#contact" class="btn" data-interest="fx">预约30分钟电话 &rarr;</a>
+</article>
+</div>
+<div class="offer-foot">
+<span>两项服务背后的分析，每周更新：<a href="https://adupassieux-arch.github.io/energy-fx-monitor/" rel="noopener" target="_blank">能源与外汇市场监测 &rarr;</a></span>
+<span>仅为市场分析，供参考，不构成投资建议。</span>
+</div>
+</div>
+</section>
+
 <section class="alt">
 <div class="wrap">
 <div class="section-head">
@@ -1096,6 +1162,15 @@ html[lang="zh-Hans"] nav ul li:not(.nav-langs) a{font-size:13px;letter-spacing:.
 </div>
 </div>
 <div class="field">
+<label for="f-subject">主题</label>
+<select id="f-subject" name="subject">
+<option value="General enquiry">一般咨询</option>
+<option value="Energy Market Briefing — sample issue">能源市场简报 — 索取样刊</option>
+<option value="FX Exposure Review">汇率风险敞口评估 — 预约电话</option>
+<option value="Advisory engagement">咨询合作</option>
+</select>
+</div>
+<div class="field">
 <label for="f-message">您的留言</label>
 <textarea id="f-message" name="message" required=""></textarea>
 </div>
@@ -1187,6 +1262,12 @@ var no=new IntersectionObserver(function(es){es.forEach(function(en){if(!en.isIn
  requestAnimationFrame(step);});},{threshold:0.6});
 [].forEach.call(nums,function(n){no.observe(n);});
 })();
+</script>
+<script>
+(function(){var sel=document.getElementById('f-subject'),ta=document.getElementById('f-message');
+var M={"briefing": "请发送2026年11月能源市场简报样刊。", "fx": "我希望预约30分钟电话，了解汇率风险敞口评估。"},V={briefing:'Energy Market Briefing — sample issue',fx:'FX Exposure Review'};
+[].forEach.call(document.querySelectorAll('[data-interest]'),function(a){a.addEventListener('click',function(){
+var k=a.getAttribute('data-interest');if(sel)sel.value=V[k];if(ta&&!ta.value.trim())ta.value=M[k];});});})();
 </script>
 </body>
 </html>

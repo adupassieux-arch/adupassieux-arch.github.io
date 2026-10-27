@@ -376,6 +376,28 @@ section.alt .expertise-item { background: var(--white); }
   color: var(--ink-soft);
 }
 
+
+/* ─── SERVICES ─── */
+.offer-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:1px;background:var(--beige-line);border:1px solid var(--beige-line)}
+.offer{background:var(--beige);padding:40px;display:flex;flex-direction:column;gap:16px;min-width:0}
+section.alt .offer{background:var(--white)}
+.offer-kind{font-size:12px;font-weight:600;letter-spacing:.18em;text-transform:uppercase;color:var(--ink-soft)}
+.offer h3{font-size:24px;font-weight:500;color:var(--black)}
+.offer p{font-size:14.5px;color:var(--ink-soft);margin:0}
+.offer ul{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:8px;font-size:14px;color:var(--ink)}
+.offer li{padding-left:18px;position:relative}
+.offer li::before{content:"";position:absolute;left:0;top:.75em;width:9px;height:1px;background:var(--black)}
+.offer-price{display:flex;flex-wrap:wrap;gap:14px 40px;border-top:1px solid var(--beige-line);padding-top:16px;margin-top:auto}
+.offer-price b{font-family:'Playfair Display','Noto Serif SC',serif;font-weight:400;font-size:30px;color:var(--black)}
+.offer-price>div{display:flex;flex-direction:column;gap:2px}
+.offer-price span{font-size:13px;color:var(--ink-soft)}
+.offer .btn{align-self:flex-start}
+.offer-foot{display:flex;flex-wrap:wrap;gap:12px 28px;align-items:center;justify-content:space-between;margin-top:28px;font-size:13.5px;color:var(--ink-soft)}
+.offer-foot a{color:var(--black)}
+.field select{width:100%;background:transparent;border:none;border-bottom:1px solid var(--beige-line);padding:8px 0;font-family:'Montserrat',sans-serif;font-size:15px;color:var(--ink);outline:none;border-radius:0}
+.field select:focus{border-color:var(--black)}
+@media (max-width:860px){.offer-grid{grid-template-columns:minmax(0,1fr)}.offer{padding:30px 24px}}
+
 /* ─── APPROACH ─── */
 .approach-row {
   display:grid;
@@ -756,6 +778,7 @@ html[lang="zh-Hans"] nav ul li:not(.nav-langs) a{font-size:13px;letter-spacing:.
         <li><a href="#about">About</a></li>
         <li><a href="#expertise">Expertise</a></li>
         <li><a href="#approach">Approach</a></li>
+        <li><a href="#services">Services</a></li>
         <li><a href="#work">Work</a></li>
         <li><a href="#publications">Publications</a></li>
         <li><a href="#briefings">Briefings</a></li>
@@ -870,6 +893,49 @@ html[lang="zh-Hans"] nav ul li:not(.nav-langs) a{font-size:13px;letter-spacing:.
     </div>
   </div>
 </section>
+
+<section class="alt" id="services">
+  <div class="wrap">
+    <div class="section-head">
+      <div class="tag">Services</div>
+      <h2>Two ways to work together on energy and currency risk.</h2>
+    </div>
+    <div class="offer-grid">
+      <article class="offer">
+        <div class="offer-kind">Monthly subscription</div>
+        <h3>Energy Market Briefing</h3>
+        <p>A monthly English briefing on crude oil, LNG and the currencies that drive energy trade between the United States, Europe and China.</p>
+        <ul>
+          <li>One-page summary: what moved, why, and what to watch next</li>
+          <li>Crude, Brent–WTI spread, natural gas and Asian LNG</li>
+          <li>EUR/USD and USD/CNY and their link to energy prices</li>
+          <li>Volatility and one-month ranges with tested accuracy</li>
+          <li>Scenarios and a dated calendar of the month's key events</li>
+        </ul>
+        <div class="offer-price"><div><b>€800</b><span>per month · Essential</span></div><div><b>€1,500</b><span>per month · with monthly call</span></div></div>
+        <a href="#contact" class="btn" data-interest="briefing">Request the sample issue &rarr;</a>
+      </article>
+      <article class="offer">
+        <div class="offer-kind">Three-day diagnostic</div>
+        <h3>FX Exposure Review</h3>
+        <p>For importers, exporters and trading companies that buy or sell in USD or CNY: how much a currency move would cost your margins and cash flow.</p>
+        <ul>
+          <li>Day 1: exposure map of every flow by currency, amount and date</li>
+          <li>Day 2: impact of EUR/USD and USD/CNY moves of ±5%, ±10% and ±15%</li>
+          <li>Day 3: written report, exposure dashboard and one-hour debrief</li>
+          <li>Measures the risk; hedging decisions stay with you and your bank</li>
+        </ul>
+        <div class="offer-price"><div><b>€2,400</b><span>fixed fee · 50% on signature</span></div></div>
+        <a href="#contact" class="btn" data-interest="fx">Book a 30-minute call &rarr;</a>
+      </article>
+    </div>
+    <div class="offer-foot">
+      <span>See the analysis behind both services, updated every week: <a href="https://adupassieux-arch.github.io/energy-fx-monitor/" target="_blank" rel="noopener">Energy &amp; FX Market Monitor &rarr;</a></span>
+      <span>Market analysis for information only. Not investment advice.</span>
+    </div>
+  </div>
+</section>
+
 
 <section class="alt">
   <div class="wrap">
@@ -1121,6 +1187,15 @@ html[lang="zh-Hans"] nav ul li:not(.nav-langs) a{font-size:13px;letter-spacing:.
           </div>
         </div>
         <div class="field">
+          <label for="f-subject">Subject</label>
+          <select id="f-subject" name="subject">
+            <option value="General enquiry">General enquiry</option>
+            <option value="Energy Market Briefing — sample issue">Energy Market Briefing — request the sample issue</option>
+            <option value="FX Exposure Review">FX Exposure Review — book a call</option>
+            <option value="Advisory engagement">Advisory engagement</option>
+          </select>
+        </div>
+        <div class="field">
           <label for="f-message">Your message</label>
           <textarea id="f-message" name="message" required></textarea>
         </div>
@@ -1214,6 +1289,12 @@ var no=new IntersectionObserver(function(es){es.forEach(function(en){if(!en.isIn
  requestAnimationFrame(step);});},{threshold:0.6});
 [].forEach.call(nums,function(n){no.observe(n);});
 })();
+</script>
+<script>
+(function(){var sel=document.getElementById('f-subject'),ta=document.getElementById('f-message');
+var M={"briefing": "Please send me the November 2026 sample issue of the Energy Market Briefing.", "fx": "I would like to book a 30-minute call about the FX Exposure Review."},V={briefing:'Energy Market Briefing — sample issue',fx:'FX Exposure Review'};
+[].forEach.call(document.querySelectorAll('[data-interest]'),function(a){a.addEventListener('click',function(){
+var k=a.getAttribute('data-interest');if(sel)sel.value=V[k];if(ta&&!ta.value.trim())ta.value=M[k];});});})();
 </script>
 </body>
 </html>
